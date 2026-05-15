@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maria Divina Dulfo | Landing Page Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .cloud-pop::before,
+    .cloud-pop::after {
+      content: "";
+      position: absolute;
+      background: white;
+      border-radius: 9999px;
+    }
+    .cloud-pop::before {
+      width: 80px;
+      height: 80px;
+      left: 40px;
+      top: -28px;
+    }
+    .cloud-pop::after {
+      width: 80px;
+      height: 80px;
+      right: 48px;
+      top: -24px;
+    }
+    .cloud-bubble-left,
+    .cloud-bubble-right {
+      position: absolute;
+      background: white;
+      border-radius: 9999px;
+      z-index: 0;
+    }
+    .cloud-bubble-left {
+      width: 64px;
+      height: 64px;
+      left: -12px;
+      top: -16px;
+    }
+    .cloud-bubble-right {
+      width: 64px;
+      height: 64px;
+      right: -16px;
+      top: 8px;
+    }
+    .modal-open { overflow: hidden; }
+  </style>
+</head>
+<body class="min-h-screen bg-[#fffaf6] text-stone-800">
+  <section class="relative overflow-hidden px-5 py-10 sm:px-8 lg:px-16">
+    <div class="absolute left-[-80px] top-[-90px] h-64 w-64 rounded-full bg-pink-100 blur-3xl"></div>
+    <div class="absolute bottom-[-80px] right-[-80px] h-72 w-72 rounded-full bg-amber-100 blur-3xl"></div>
+
+    <div class="relative mx-auto max-w-6xl">
+      <nav class="mb-12 flex flex-col gap-4 rounded-3xl border border-white/70 bg-white/70 px-5 py-4 shadow-sm backdrop-blur sm:flex-row sm:items-center sm:justify-between">
+        <div class="flex items-center gap-3">
+          <img src="64930ebd-06b3-4ab5-91f8-a46baddd3451.jpg" alt="Maria Divina Dulfo" class="h-14 w-14 rounded-full border-4 border-white object-cover shadow-md" />
+          <div>
+            <p class="text-sm font-medium uppercase tracking-[0.24em] text-pink-500">Portfolio</p>
+            <h1 class="text-xl font-semibold text-stone-900">Maria Divina Dulfo</h1>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-3 text-sm text-stone-600">
+          <a class="flex items-center gap-1.5 rounded-full bg-white px-3 py-2 shadow-sm" href="mailto:mariadivph.biz@gmail.com">✉ Email</a>
+          <a class="flex items-center gap-1.5 rounded-full bg-white px-3 py-2 shadow-sm" href="tel:+639693173598">☎ Call</a>
+          <a class="flex items-center gap-1.5 rounded-full bg-white px-3 py-2 shadow-sm" href="https://www.facebook.com/theebaynn" target="_blank" rel="noreferrer"><span class="font-bold">f</span> Facebook</a>
+        </div>
+      </nav>
+
+      <div class="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+        <div class="animate-fade-in">
+          <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-pink-100 bg-white px-4 py-2 text-sm font-medium text-pink-600 shadow-sm">
+            ✨ Landing Page & Website Concept Designer
+          </div>
+          <h2 class="max-w-3xl text-4xl font-bold leading-tight text-stone-950 sm:text-5xl lg:text-6xl">
+            Cute, clean, and modern landing page concepts for small businesses.
+          </h2>
+          <p class="mt-5 max-w-2xl text-base leading-8 text-stone-600 sm:text-lg">
+            I create visually engaging website concepts that help businesses look more trustworthy, updated, and easy to explore online — with a strong focus on first impressions, mobile-friendly layouts, and clear service presentation.
+          </p>
+          <div class="mt-7 flex flex-wrap gap-3">
+            <a href="#projects" class="rounded-full bg-stone-900 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-stone-300 transition hover:-translate-y-0.5">View My Projects</a>
+            <button id="workWithMeBtn" type="button" class="rounded-full border border-stone-200 bg-white px-6 py-3 text-sm font-semibold text-stone-800 shadow-sm transition hover:-translate-y-0.5">Work With Me</button>
+          </div>
+        </div>
+
+        <div class="rounded-[2rem] border border-white bg-white/80 p-4 shadow-xl shadow-pink-100/60 backdrop-blur">
+          <div class="rounded-[1.5rem] bg-gradient-to-br from-pink-50 via-white to-amber-50 p-5">
+            <div class="mb-5 flex items-center justify-between">
+              <div>
+                <p class="text-sm font-medium text-stone-500">3 Featured Projects</p>
+                <h3 class="text-2xl font-bold text-stone-900">Video Portfolio</h3>
+              </div>
+              <div class="text-3xl text-pink-500">💻</div>
+            </div>
+            <div class="space-y-3" id="featuredProjectList"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="px-5 py-12 sm:px-8 lg:px-16">
+    <div class="mx-auto max-w-6xl">
+      <div class="mb-8 text-center">
+        <p class="text-sm font-semibold uppercase tracking-[0.24em] text-pink-500">Selected Projects</p>
+        <h3 class="mt-2 text-3xl font-bold text-stone-950 sm:text-4xl">Before & After Website Concepts</h3>
+        <p class="mx-auto mt-4 max-w-2xl text-stone-600">
+          Click any project card to view the before version and watch the video preview of the redesign or landing page concept.
+        </p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3" id="projectCards"></div>
+    </div>
+  </section>
+
+  <section class="px-5 pb-14 sm:px-8 lg:px-16">
+    <div class="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2">
+      <div class="rounded-[2rem] bg-stone-900 p-7 text-white shadow-xl sm:p-10">
+        <p class="text-sm font-semibold uppercase tracking-[0.24em] text-pink-300">Services</p>
+        <h3 class="mt-2 text-3xl font-bold">What I can create</h3>
+        <p class="mt-4 leading-7 text-stone-300">
+          I design modern landing pages, website redesign concepts, small business websites, mobile-friendly layouts, interactive sections, and portfolio-style pages that help brands look more polished online.
+        </p>
+        <div class="mt-6 grid gap-3 text-sm">
+          <div class="rounded-2xl bg-white/10 px-4 py-3 text-white backdrop-blur">✓ Landing Page Concepts</div>
+          <div class="rounded-2xl bg-white/10 px-4 py-3 text-white backdrop-blur">✓ Website Redesign Concepts</div>
+          <div class="rounded-2xl bg-white/10 px-4 py-3 text-white backdrop-blur">✓ Mobile-Friendly Layouts</div>
+          <div class="rounded-2xl bg-white/10 px-4 py-3 text-white backdrop-blur">✓ Business Website Concepts</div>
+        </div>
+      </div>
+
+      <div class="rounded-[2rem] border border-pink-100 bg-white p-7 shadow-xl shadow-pink-100/60 sm:p-10">
+        <p class="text-sm font-semibold uppercase tracking-[0.24em] text-pink-500">Other Services</p>
+        <h3 class="mt-2 text-3xl font-bold text-stone-950">Extra support I offer</h3>
+        <p class="mt-4 leading-7 text-stone-600">
+          Aside from landing pages, I can also support small businesses with design, admin, customer support, and day-to-day coordination needs.
+        </p>
+        <div class="mt-6 grid gap-3 text-sm text-stone-700">
+          <div class="rounded-2xl bg-[#fff7fb] px-4 py-3 shadow-sm">✓ Basic Designs: Invitations, Logo, Content Post, Email Newsletter & etc.</div>
+          <div class="rounded-2xl bg-[#fff7fb] px-4 py-3 shadow-sm">✓ Customer Support to your business</div>
+          <div class="rounded-2xl bg-[#fff7fb] px-4 py-3 shadow-sm">✓ Operations and Administrative Support</div>
+          <div class="rounded-2xl bg-[#fff7fb] px-4 py-3 shadow-sm">✓ Email & Calendar Management</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="contactCloud" class="fixed inset-0 z-50 hidden items-end justify-end bg-stone-950/30 p-4 backdrop-blur-sm sm:p-8">
+    <div class="cloud-pop relative w-full max-w-sm rounded-[2.5rem] bg-white p-6 text-center shadow-2xl shadow-pink-200">
+      <div class="cloud-bubble-left"></div>
+      <div class="cloud-bubble-right"></div>
+      <button id="closeContactCloud" class="absolute right-4 top-4 z-10 rounded-full bg-pink-50 p-2 text-stone-600 hover:bg-pink-100" aria-label="Close contact pop up">✕</button>
+      <div class="relative z-10 pt-5">
+        <div class="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-[#e9fff0] text-2xl text-green-600 shadow-sm">💬</div>
+        <h3 class="text-2xl font-bold text-stone-950">Let’s work together</h3>
+        <p class="mt-2 text-sm leading-6 text-stone-600">Message me on WhatsApp or scan the QR code below.</p>
+        <a href="https://wa.me/639693173598?text=Helloo%20good%20day!%20How%20can%20I%20help%20you%3F" target="_blank" rel="noreferrer" class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-green-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-green-100 transition hover:-translate-y-0.5 hover:bg-green-600">💬 WhatsApp</a>
+        <div class="mt-5 rounded-3xl bg-[#fff7fb] p-4">
+          <img src="image.png" alt="WhatsApp QR code" class="mx-auto w-56 rounded-2xl bg-white object-cover p-2 shadow-sm" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="projectModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-stone-950/70 p-4 backdrop-blur-sm">
+    <div class="max-h-[92vh] w-full max-w-5xl overflow-auto rounded-[2rem] bg-white p-4 shadow-2xl sm:p-6">
+      <div class="mb-4 flex items-start justify-between gap-4">
+        <div>
+          <p id="modalCategory" class="text-xs font-semibold uppercase tracking-[0.2em] text-pink-500"></p>
+          <h3 id="modalTitle" class="text-2xl font-bold text-stone-950 sm:text-3xl"></h3>
+          <p id="modalSubtitle" class="text-stone-500"></p>
+        </div>
+        <button id="closeProjectModal" class="rounded-full bg-stone-100 p-2 text-stone-600 hover:bg-stone-200" aria-label="Close project preview">✕</button>
+      </div>
+
+      <div class="rounded-[1.5rem] bg-[#fff7fb] p-5">
+        <div class="mb-6">
+          <p id="modalBeforeLabel" class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-pink-500"></p>
+          <div id="modalBeforeContent"></div>
+        </div>
+        <div>
+          <p id="modalAfterLabel" class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-pink-500"></p>
+          <div class="overflow-hidden rounded-3xl bg-stone-100 shadow-sm">
+            <video id="modalVideo" controls autoplay class="h-full w-full"></video>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5 grid gap-5 md:grid-cols-[1fr_0.8fr]">
+        <div>
+          <h4 class="mb-2 text-lg font-bold text-stone-950">Project Overview</h4>
+          <p id="modalDescription" class="leading-7 text-stone-600"></p>
+        </div>
+        <div class="rounded-3xl bg-[#fff7fb] p-5">
+          <h4 class="mb-3 text-lg font-bold text-stone-950">Concept Highlights</h4>
+          <ul id="modalHighlights" class="space-y-2 text-sm text-stone-700"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const projects = [
+      {
+        title: "B&R Fabrication",
+        subtitle: "Website Redesign Concept",
+        category: "Industrial / Fabrication",
+        beforeLabel: "Before Website",
+        afterLabel: "After Redesign Concept",
+        beforeImage: "BR Fabrication.png",
+        video: "BR Modern webpage.mp4",
+        description: "A modern redesign concept created to elevate B&R Fabrication’s online presence while preserving the company’s professional industrial identity.",
+        highlights: [
+          "Modern industrial-inspired design",
+          "Client showcase concept",
+          "Interactive hover sections",
+          "Project and credibility-focused layout"
+        ]
+      },
+      {
+        title: "Cluck Plumbing LLC",
+        subtitle: "New Landing Page Concept",
+        category: "Plumbing / Home Services",
+        beforeLabel: "Before",
+        afterLabel: "Landing Page Concept",
+        beforeNote: "No existing website available",
+        video: "Cluck Plumbing Team Demo Webpage.mp4",
+        description: "A warm and trustworthy landing page concept designed for a small plumbing business, focused on building confidence with homeowners before they call.",
+        highlights: [
+          "Service-focused structure",
+          "Review and trust sections",
+          "Family-owned business feel",
+          "Clear call-to-action flow"
+        ]
+      },
+      {
+        title: "Jeff Gravatt Marketing",
+        subtitle: "Website Redesign Concept",
+        category: "Marketing / Personal Business",
+        beforeLabel: "Before Website",
+        afterLabel: "After Redesign Concept",
+        beforeImage: "Jeff Before.png",
+        video: "Jeff Page.mp4",
+        description: "A polished redesign concept focused on a cleaner visual structure, stronger presentation, and a smoother browsing experience.",
+        highlights: [
+          "Clean modern layout",
+          "Smooth section flow",
+          "Brand-focused presentation",
+          "Mobile-friendly concept"
+        ]
+      }
+    ];
+
+    const featuredProjectList = document.getElementById("featuredProjectList");
+    const projectCards = document.getElementById("projectCards");
+    const projectModal = document.getElementById("projectModal");
+    const contactCloud = document.getElementById("contactCloud");
+    const modalVideo = document.getElementById("modalVideo");
+
+    function openContactCloud() {
+      contactCloud.classList.remove("hidden");
+      contactCloud.classList.add("flex");
+      document.body.classList.add("modal-open");
+    }
+
+    function closeContactCloud() {
+      contactCloud.classList.add("hidden");
+      contactCloud.classList.remove("flex");
+      document.body.classList.remove("modal-open");
+    }
+
+    function openProjectModal(project) {
+      document.getElementById("modalCategory").textContent = project.category;
+      document.getElementById("modalTitle").textContent = project.title;
+      document.getElementById("modalSubtitle").textContent = project.subtitle;
+      document.getElementById("modalBeforeLabel").textContent = project.beforeLabel;
+      document.getElementById("modalAfterLabel").textContent = project.afterLabel;
+      document.getElementById("modalDescription").textContent = project.description;
+
+      const beforeContent = document.getElementById("modalBeforeContent");
+      if (project.beforeImage) {
+        beforeContent.innerHTML = `
+          <div class="overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm">
+            <img src="${project.beforeImage}" alt="${project.title} before website" class="w-full object-cover" />
+          </div>
+        `;
+      } else {
+        beforeContent.innerHTML = `
+          <div class="rounded-3xl border border-pink-100 bg-white p-8 text-center shadow-sm">
+            <p class="text-2xl font-bold text-stone-900">No website yet</p>
+            <p class="mt-2 text-stone-600">This project was created as a fresh landing page concept from scratch.</p>
+          </div>
+        `;
+      }
+
+      modalVideo.src = project.video;
+
+      const highlights = document.getElementById("modalHighlights");
+      highlights.innerHTML = project.highlights
+        .map(highlight => `
+          <li class="flex gap-2">
+            <span class="mt-1.5 h-2 w-2 rounded-full bg-pink-400"></span>
+            <span>${highlight}</span>
+          </li>
+        `)
+        .join("");
+
+      projectModal.classList.remove("hidden");
+      projectModal.classList.add("flex");
+      document.body.classList.add("modal-open");
+    }
+
+    function closeProjectModal() {
+      projectModal.classList.add("hidden");
+      projectModal.classList.remove("flex");
+      modalVideo.pause();
+      modalVideo.removeAttribute("src");
+      modalVideo.load();
+      document.body.classList.remove("modal-open");
+    }
+
+    function renderProjects() {
+      featuredProjectList.innerHTML = projects.map((project, index) => `
+        <button data-index="${index}" class="featured-project group flex w-full items-center gap-4 rounded-3xl bg-white p-3 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+          <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-stone-900 text-white shadow-sm">▶</div>
+          <div class="min-w-0 flex-1">
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-pink-500">Project ${index + 1}</p>
+            <h4 class="truncate text-base font-bold text-stone-900">${project.title}</h4>
+            <p class="truncate text-sm text-stone-500">${project.subtitle}</p>
+          </div>
+          <span class="text-stone-300 transition group-hover:text-pink-500">↗</span>
+        </button>
+      `).join("");
+
+      projectCards.innerHTML = projects.map((project, index) => {
+        const media = project.beforeImage
+          ? `<img src="${project.beforeImage}" alt="${project.title} before redesign" class="h-full w-full object-cover" />`
+          : `<div class="flex h-full w-full items-center justify-center bg-gradient-to-br from-pink-50 to-amber-50 p-6 text-center">
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-pink-500">Before</p>
+                <p class="mt-2 text-lg font-bold text-stone-900">No website yet</p>
+                <p class="mt-1 text-sm text-stone-500">New landing page concept created from scratch</p>
+              </div>
+            </div>`;
+
+        return `
+          <article class="group overflow-hidden rounded-[2rem] border border-stone-100 bg-white shadow-sm transition hover:-translate-y-2 hover:shadow-xl hover:shadow-pink-100">
+            <button data-index="${index}" class="project-card block w-full text-left">
+              <div class="relative aspect-video overflow-hidden bg-stone-100">
+                ${media}
+                <div class="absolute inset-0 flex items-center justify-center bg-stone-950/25 transition group-hover:bg-stone-950/10">
+                  <div class="flex h-16 w-16 items-center justify-center rounded-full bg-white/95 text-stone-900 shadow-lg transition group-hover:scale-110">▶</div>
+                </div>
+              </div>
+              <div class="p-5">
+                <p class="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-pink-500">${project.category}</p>
+                <h4 class="text-xl font-bold text-stone-950">${project.title}</h4>
+                <p class="mt-1 text-sm font-medium text-stone-500">${project.subtitle}</p>
+                <p class="mt-4 text-sm leading-6 text-stone-600">${project.description}</p>
+              </div>
+            </button>
+          </article>
+        `;
+      }).join("");
+
+      document.querySelectorAll(".featured-project, .project-card").forEach(button => {
+        button.addEventListener("click", () => {
+          const index = Number(button.getAttribute("data-index"));
+          openProjectModal(projects[index]);
+        });
+      });
+    }
+
+    document.getElementById("workWithMeBtn").addEventListener("click", openContactCloud);
+    document.getElementById("closeContactCloud").addEventListener("click", closeContactCloud);
+    document.getElementById("closeProjectModal").addEventListener("click", closeProjectModal);
+
+    contactCloud.addEventListener("click", (event) => {
+      if (event.target === contactCloud) closeContactCloud();
+    });
+
+    projectModal.addEventListener("click", (event) => {
+      if (event.target === projectModal) closeProjectModal();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeContactCloud();
+        closeProjectModal();
+      }
+    });
+
+    renderProjects();
+  </script>
+</body>
+</html>
