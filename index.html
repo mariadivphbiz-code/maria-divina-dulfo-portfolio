@@ -3,7 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maria Divina Dulfo | Landing Page Portfolio</title>
+  <title>Maria Divina Dulfo | Landing Page & Website Design Portfolio</title>
+  <meta name="description" content="Maria Divina Dulfo creates clean, modern landing pages, website redesign concepts, responsive business websites, and digital support services for small businesses." />
+  <meta name="keywords" content="landing page designer, website redesign, small business website, responsive website, website portfolio, Maria Divina Dulfo, virtual assistant web support" />
+  <meta name="author" content="Maria Divina Dulfo" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Maria Divina Dulfo | Landing Page & Website Design Portfolio" />
+  <meta property="og:description" content="Clean and modern landing page concepts, website redesigns, and digital business support services." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="64930ebd-06b3-4ab5-91f8-a46baddd3451.jpg" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html { scroll-behavior: smooth; }
@@ -46,7 +54,40 @@
       top: 8px;
     }
     .modal-open { overflow: hidden; }
+    .service-pop {
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+      cursor: default;
+    }
+    .service-pop:hover {
+      transform: translateY(-6px) scale(1.035);
+      box-shadow: 0 18px 35px rgba(244, 114, 182, 0.18);
+    }
+    .service-dark:hover {
+      background: rgba(255, 255, 255, 0.18);
+    }
+    .service-light:hover {
+      background: rgba(252, 231, 243, 0.75);
+    }
   </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Maria Divina Dulfo",
+      "email": "mariadivph.biz@gmail.com",
+      "telephone": "+63 969 317 3598",
+      "url": "https://www.facebook.com/theebaynn",
+      "jobTitle": "Landing Page and Website Concept Designer",
+      "knowsAbout": [
+        "Landing Page Design",
+        "Website Redesign",
+        "Responsive Web Design",
+        "Customer Support",
+        "Operations Support",
+        "Email and Calendar Management"
+      ]
+    }
+  </script>
 </head>
 <body class="min-h-screen bg-[#fffaf6] text-stone-800">
   <section class="relative overflow-hidden px-5 py-10 sm:px-8 lg:px-16">
@@ -75,7 +116,7 @@
             ✨ Landing Page & Website Concept Designer
           </div>
           <h2 class="max-w-3xl text-4xl font-bold leading-tight text-stone-950 sm:text-5xl lg:text-6xl">
-            Cute, clean, and modern landing page concepts for small businesses.
+            Clean and modern landing pages and website concepts designed to help businesses stand out online.
           </h2>
           <p class="mt-5 max-w-2xl text-base leading-8 text-stone-600 sm:text-lg">
             I create visually engaging website concepts that help businesses look more trustworthy, updated, and easy to explore online — with a strong focus on first impressions, mobile-friendly layouts, and clear service presentation.
@@ -124,10 +165,10 @@
           I design modern landing pages, website redesign concepts, small business websites, mobile-friendly layouts, interactive sections, and portfolio-style pages that help brands look more polished online.
         </p>
         <div class="mt-6 grid gap-3 text-sm">
-          <div class="rounded-2xl bg-white/10 px-4 py-3 text-white backdrop-blur">✓ Landing Page Concepts</div>
-          <div class="rounded-2xl bg-white/10 px-4 py-3 text-white backdrop-blur">✓ Website Redesign Concepts</div>
-          <div class="rounded-2xl bg-white/10 px-4 py-3 text-white backdrop-blur">✓ Mobile-Friendly Layouts</div>
-          <div class="rounded-2xl bg-white/10 px-4 py-3 text-white backdrop-blur">✓ Business Website Concepts</div>
+          <div class="service-pop service-dark rounded-2xl bg-white/10 px-4 py-3 text-white backdrop-blur">✓ Landing Page Concepts</div>
+          <div class="service-pop service-dark rounded-2xl bg-white/10 px-4 py-3 text-white backdrop-blur">✓ Website Redesign Concepts</div>
+          <div class="service-pop service-dark rounded-2xl bg-white/10 px-4 py-3 text-white backdrop-blur">✓ Mobile-Friendly Layouts</div>
+          <div class="service-pop service-dark rounded-2xl bg-white/10 px-4 py-3 text-white backdrop-blur">✓ Business Website Concepts</div>
         </div>
       </div>
 
@@ -138,10 +179,10 @@
           Aside from landing pages, I can also support small businesses with design, admin, customer support, and day-to-day coordination needs.
         </p>
         <div class="mt-6 grid gap-3 text-sm text-stone-700">
-          <div class="rounded-2xl bg-[#fff7fb] px-4 py-3 shadow-sm">✓ Basic Designs: Invitations, Logo, Content Post, Email Newsletter & etc.</div>
-          <div class="rounded-2xl bg-[#fff7fb] px-4 py-3 shadow-sm">✓ Customer Support to your business</div>
-          <div class="rounded-2xl bg-[#fff7fb] px-4 py-3 shadow-sm">✓ Operations and Administrative Support</div>
-          <div class="rounded-2xl bg-[#fff7fb] px-4 py-3 shadow-sm">✓ Email & Calendar Management</div>
+          <div class="service-pop service-light rounded-2xl bg-[#fff7fb] px-4 py-3 shadow-sm">✓ Basic Designs: Invitations, Logo, Content Post, Email Newsletter & etc.</div>
+          <div class="service-pop service-light rounded-2xl bg-[#fff7fb] px-4 py-3 shadow-sm">✓ Customer Support to your business</div>
+          <div class="service-pop service-light rounded-2xl bg-[#fff7fb] px-4 py-3 shadow-sm">✓ Operations and Administrative Support</div>
+          <div class="service-pop service-light rounded-2xl bg-[#fff7fb] px-4 py-3 shadow-sm">✓ Email & Calendar Management</div>
         </div>
       </div>
     </div>
@@ -324,7 +365,7 @@
     function renderProjects() {
       featuredProjectList.innerHTML = projects.map((project, index) => `
         <button data-index="${index}" class="featured-project group flex w-full items-center gap-4 rounded-3xl bg-white p-3 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-md">
-          <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-stone-900 text-white shadow-sm">▶</div>
+          <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-pink-100/70 text-pink-600 shadow-sm backdrop-blur">▶</div>
           <div class="min-w-0 flex-1">
             <p class="text-xs font-semibold uppercase tracking-[0.18em] text-pink-500">Project ${index + 1}</p>
             <h4 class="truncate text-base font-bold text-stone-900">${project.title}</h4>
