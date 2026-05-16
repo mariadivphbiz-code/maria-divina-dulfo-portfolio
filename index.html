@@ -188,7 +188,95 @@
     </div>
   </section>
 
-  <div id="contactCloud" class="fixed inset-0 z-50 hidden items-end justify-end bg-stone-950/30 p-4 backdrop-blur-sm sm:p-8">
+  <section id="inquiry" class="px-5 pb-16 sm:px-8 lg:px-16">
+    <div class="mx-auto max-w-6xl rounded-[2rem] border border-pink-100 bg-white/90 p-7 shadow-xl shadow-pink-100/60 backdrop-blur sm:p-10">
+      <div class="mb-8 text-center">
+        <p class="text-sm font-semibold uppercase tracking-[0.24em] text-pink-500">Inquiry Form</p>
+        <h3 class="mt-2 text-3xl font-bold text-stone-950 sm:text-4xl">Tell me about your project</h3>
+        <p class="mx-auto mt-4 max-w-2xl text-stone-600">
+          Fill out the details below so I can understand what your business needs and how I can help.
+        </p>
+      </div>
+
+      <form id="inquiryForm" action="https://formsubmit.co/mariadivph.biz@gmail.com" method="POST" class="grid gap-5 md:grid-cols-2">
+        <input type="hidden" name="_subject" value="New Portfolio Inquiry from Maria's Website" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <div>
+          <label for="clientName" class="mb-2 block text-sm font-semibold text-stone-700">Name</label>
+          <input id="clientName" name="clientName" type="text" required class="w-full rounded-2xl border border-pink-100 bg-[#fffaf6] px-4 py-3 text-sm outline-none transition focus:border-pink-300 focus:ring-4 focus:ring-pink-100" placeholder="Your name" />
+        </div>
+
+        <div>
+          <label for="businessName" class="mb-2 block text-sm font-semibold text-stone-700">Name of the business</label>
+          <input id="businessName" name="businessName" type="text" required class="w-full rounded-2xl border border-pink-100 bg-[#fffaf6] px-4 py-3 text-sm outline-none transition focus:border-pink-300 focus:ring-4 focus:ring-pink-100" placeholder="Business name" />
+        </div>
+
+        <div>
+          <label for="businessType" class="mb-2 block text-sm font-semibold text-stone-700">Type of business</label>
+          <select id="businessType" name="businessType" required class="w-full rounded-2xl border border-pink-100 bg-[#fffaf6] px-4 py-3 text-sm outline-none transition focus:border-pink-300 focus:ring-4 focus:ring-pink-100">
+            <option value="">Select business type</option>
+            <option>Construction / Contractor</option>
+            <option>Plumbing Services</option>
+            <option>Electrical Services</option>
+            <option>HVAC / Home Services</option>
+            <option>Cleaning Services</option>
+            <option>Beauty / Salon / Spa</option>
+            <option>Clothing / Boutique</option>
+            <option>Food / Restaurant / Cafe</option>
+            <option>Flower Shop / Events</option>
+            <option>Fitness / Wellness</option>
+            <option>Coaching / Consulting</option>
+            <option>Therapy / Counseling</option>
+            <option>Real Estate</option>
+            <option>E-commerce / Online Store</option>
+            <option>Personal Brand / Portfolio</option>
+            <option>Marketing / Creative Services</option>
+            <option>Automotive / Motorcycle</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="serviceNeeded" class="mb-2 block text-sm font-semibold text-stone-700">What do you need help with?</label>
+          <select id="serviceNeeded" name="serviceNeeded" required class="w-full rounded-2xl border border-pink-100 bg-[#fffaf6] px-4 py-3 text-sm outline-none transition focus:border-pink-300 focus:ring-4 focus:ring-pink-100">
+            <option value="">Select service</option>
+            <option>Landing Page Concept</option>
+            <option>Website Redesign Concept</option>
+            <option>Mobile-Friendly Website Layout</option>
+            <option>Business Website Concept</option>
+            <option>Portfolio Website</option>
+            <option>Basic Designs: Invitations, Logo, Content Post, Email Newsletter & etc.</option>
+            <option>Customer Support to your business</option>
+            <option>Operations and Administrative Support</option>
+            <option>Email & Calendar Management</option>
+            <option>Not sure yet / I need advice</option>
+          </select>
+        </div>
+
+        <div class="md:col-span-2">
+          <label for="budget" class="mb-2 block text-sm font-semibold text-stone-700">Budget for the project</label>
+          <input id="budget" name="budget" type="text" class="w-full rounded-2xl border border-pink-100 bg-[#fffaf6] px-4 py-3 text-sm outline-none transition focus:border-pink-300 focus:ring-4 focus:ring-pink-100" placeholder="Example: $300, $500, ₱15,000, or open to discuss" />
+        </div>
+
+        <div class="md:col-span-2">
+          <div class="mb-2 flex items-center justify-between gap-3">
+            <label for="inquiryNote" class="block text-sm font-semibold text-stone-700">Note / Inquiry Section</label>
+            <span id="wordCounter" class="text-xs text-stone-400">0 / 500 words</span>
+          </div>
+          <textarea id="inquiryNote" name="inquiryNote" rows="7" class="w-full rounded-2xl border border-pink-100 bg-[#fffaf6] px-4 py-3 text-sm leading-6 outline-none transition focus:border-pink-300 focus:ring-4 focus:ring-pink-100" placeholder="Tell me what you need help with, your goals, preferred timeline, or any details about your business."></textarea>
+          <p id="wordLimitMessage" class="mt-2 hidden text-sm text-pink-600">Please keep your note within 500 words.</p>
+        </div>
+
+        <div class="md:col-span-2 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p class="text-sm text-stone-500">When you submit, your inquiry will be sent directly to my email.</p>
+          <button type="submit" class="rounded-full bg-stone-900 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-stone-200 transition hover:-translate-y-0.5 hover:bg-stone-800">Send Inquiry</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <div id="contactCloud" class="fixed inset-0 z-50 hidden items-center justify-center bg-stone-950/30 p-4 backdrop-blur-sm sm:p-8">
     <div class="cloud-pop relative w-full max-w-sm rounded-[2.5rem] bg-white p-6 text-center shadow-2xl shadow-pink-200">
       <div class="cloud-bubble-left"></div>
       <div class="cloud-bubble-right"></div>
@@ -365,7 +453,9 @@
     function renderProjects() {
       featuredProjectList.innerHTML = projects.map((project, index) => `
         <button data-index="${index}" class="featured-project group flex w-full items-center gap-4 rounded-3xl bg-white p-3 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-md">
-          <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-pink-100/70 text-pink-600 shadow-sm backdrop-blur">▶</div>
+          <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-pink-200/70 bg-white/35 text-pink-500 shadow-sm backdrop-blur-md">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full border border-pink-300/70 bg-white/40 text-sm shadow-inner">▶</span>
+          </div>
           <div class="min-w-0 flex-1">
             <p class="text-xs font-semibold uppercase tracking-[0.18em] text-pink-500">Project ${index + 1}</p>
             <h4 class="truncate text-base font-bold text-stone-900">${project.title}</h4>
@@ -376,15 +466,9 @@
       `).join("");
 
       projectCards.innerHTML = projects.map((project, index) => {
-        const media = project.beforeImage
-          ? `<img src="${project.beforeImage}" alt="${project.title} before redesign" class="h-full w-full object-cover" />`
-          : `<div class="flex h-full w-full items-center justify-center bg-gradient-to-br from-pink-50 to-amber-50 p-6 text-center">
-              <div>
-                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-pink-500">Before</p>
-                <p class="mt-2 text-lg font-bold text-stone-900">No website yet</p>
-                <p class="mt-1 text-sm text-stone-500">New landing page concept created from scratch</p>
-              </div>
-            </div>`;
+        const media = `
+          <video src="${project.video}" class="h-full w-full object-cover" muted loop playsinline preload="metadata"></video>
+        `;
 
         return `
           <article class="group overflow-hidden rounded-[2rem] border border-stone-100 bg-white shadow-sm transition hover:-translate-y-2 hover:shadow-xl hover:shadow-pink-100">
@@ -392,7 +476,9 @@
               <div class="relative aspect-video overflow-hidden bg-stone-100">
                 ${media}
                 <div class="absolute inset-0 flex items-center justify-center bg-stone-950/25 transition group-hover:bg-stone-950/10">
-                  <div class="flex h-16 w-16 items-center justify-center rounded-full bg-white/95 text-stone-900 shadow-lg transition group-hover:scale-110">▶</div>
+                  <div class="flex h-16 w-16 items-center justify-center rounded-full border border-white/70 bg-white/35 text-white shadow-lg backdrop-blur-md transition group-hover:scale-110">
+                    <span class="ml-1 text-2xl drop-shadow">▶</span>
+                  </div>
                 </div>
               </div>
               <div class="p-5">
@@ -411,6 +497,50 @@
           const index = Number(button.getAttribute("data-index"));
           openProjectModal(projects[index]);
         });
+      });
+
+      document.querySelectorAll(".project-card video").forEach(video => {
+        video.addEventListener("mouseenter", () => video.play());
+        video.addEventListener("mouseleave", () => {
+          video.pause();
+          video.currentTime = 0;
+        });
+      });
+    }
+
+    const inquiryForm = document.getElementById("inquiryForm");
+    const inquiryNote = document.getElementById("inquiryNote");
+    const wordCounter = document.getElementById("wordCounter");
+    const wordLimitMessage = document.getElementById("wordLimitMessage");
+
+    function countWords(text) {
+      return text.trim().split(" ").filter(Boolean).length;
+    }
+
+    if (inquiryNote) {
+      inquiryNote.addEventListener("input", function () {
+        const words = countWords(inquiryNote.value);
+        wordCounter.textContent = words + " / 500 words";
+
+        if (words > 500) {
+          wordCounter.classList.add("text-pink-600");
+          wordLimitMessage.classList.remove("hidden");
+        } else {
+          wordCounter.classList.remove("text-pink-600");
+          wordLimitMessage.classList.add("hidden");
+        }
+      });
+    }
+
+    if (inquiryForm) {
+      inquiryForm.addEventListener("submit", function (event) {
+        const words = countWords(inquiryNote.value);
+
+        if (words > 500) {
+          event.preventDefault();
+          wordLimitMessage.classList.remove("hidden");
+          inquiryNote.focus();
+        }
       });
     }
 
