@@ -339,6 +339,7 @@
         beforeLabel: "Before Website",
         afterLabel: "After Redesign Concept",
         beforeImage: "BR Fabrication.png",
+        thumbnailImage: "BR After Thumbnail.jpg",
         video: "BR Modern webpage.mp4",
         description: "A modern redesign concept created to elevate B&R Fabrication’s online presence while preserving the company’s professional industrial identity.",
         highlights: [
@@ -355,6 +356,7 @@
         beforeLabel: "Before",
         afterLabel: "Landing Page Concept",
         beforeNote: "No existing website available",
+        thumbnailImage: "Cluck After Thumbnail.jpg",
         video: "Cluck Plumbing Team Demo Webpage.mp4",
         description: "A warm and trustworthy landing page concept designed for a small plumbing business, focused on building confidence with homeowners before they call.",
         highlights: [
@@ -371,6 +373,7 @@
         beforeLabel: "Before Website",
         afterLabel: "After Redesign Concept",
         beforeImage: "Jeff Before.png",
+        thumbnailImage: "Jeff After Thumbnail.jpg",
         video: "Jeff Page.mp4",
         description: "A polished redesign concept focused on a cleaner visual structure, stronger presentation, and a smoother browsing experience.",
         highlights: [
@@ -467,7 +470,7 @@
 
       projectCards.innerHTML = projects.map((project, index) => {
         const media = `
-          <video src="${project.video}" class="h-full w-full object-cover" muted loop playsinline preload="metadata"></video>
+          <img src="${project.thumbnailImage}" alt="${project.title} after website concept preview" class="h-full w-full object-cover" loading="lazy" />
         `;
 
         return `
@@ -496,14 +499,6 @@
         button.addEventListener("click", () => {
           const index = Number(button.getAttribute("data-index"));
           openProjectModal(projects[index]);
-        });
-      });
-
-      document.querySelectorAll(".project-card video").forEach(video => {
-        video.addEventListener("mouseenter", () => video.play());
-        video.addEventListener("mouseleave", () => {
-          video.pause();
-          video.currentTime = 0;
         });
       });
     }
