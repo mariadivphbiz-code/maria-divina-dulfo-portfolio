@@ -470,7 +470,18 @@
 
       projectCards.innerHTML = projects.map((project, index) => {
         const media = `
-          <img src="${project.thumbnailImage}" alt="${project.title} after website concept preview" class="h-full w-full object-cover" loading="lazy" />
+          <div class="relative flex h-full w-full items-center justify-center overflow-hidden bg-gradient-to-br from-pink-50 via-white to-rose-50">
+            <div class="absolute left-6 top-5 h-24 w-24 rounded-full bg-white/55 blur-2xl"></div>
+            <div class="absolute bottom-4 right-6 h-28 w-28 rounded-full bg-pink-100/30 blur-2xl"></div>
+            <div class="relative z-10 flex flex-col items-center justify-center text-center">
+              <div class="flex h-16 w-16 items-center justify-center rounded-full border border-pink-200/80 bg-white/45 shadow-xl shadow-pink-100 backdrop-blur-md">
+                <span class="ml-1 h-0 w-0 border-y-[9px] border-l-[14px] border-y-transparent border-l-pink-500"></span>
+              </div>
+              <p class="mt-4 rounded-full border border-white/60 bg-white/55 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-pink-500 shadow-sm backdrop-blur-md">
+                Click to watch my project
+              </p>
+            </div>
+          </div>
         `;
 
         return `
@@ -478,11 +489,7 @@
             <button data-index="${index}" class="project-card block w-full text-left">
               <div class="relative aspect-video overflow-hidden bg-stone-100">
                 ${media}
-                <div class="absolute inset-0 flex items-center justify-center bg-stone-950/25 transition group-hover:bg-stone-950/10">
-                  <div class="flex h-16 w-16 items-center justify-center rounded-full border border-pink-200/80 bg-pink-100/30 text-pink-500 shadow-lg backdrop-blur-md transition group-hover:scale-110">
-                    <span class="ml-1 text-2xl drop-shadow"><span class="ml-0.5 inline-block h-0 w-0 border-y-[7px] border-l-[11px] border-y-transparent border-l-pink-500"></span></span>
-                  </div>
-                </div>
+                <div class="absolute inset-0 bg-white/0 transition group-hover:bg-white/10"></div>
               </div>
               <div class="p-5">
                 <p class="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-pink-500">${project.category}</p>
