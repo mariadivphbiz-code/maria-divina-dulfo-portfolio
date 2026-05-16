@@ -453,8 +453,8 @@
     function renderProjects() {
       featuredProjectList.innerHTML = projects.map((project, index) => `
         <button data-index="${index}" class="featured-project group flex w-full items-center gap-4 rounded-3xl bg-white p-3 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-md">
-          <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-pink-200/70 bg-white/35 text-pink-500 shadow-sm backdrop-blur-md">
-            <span class="flex h-8 w-8 items-center justify-center rounded-full border border-pink-300/70 bg-white/40 text-sm shadow-inner">▶</span>
+          <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-pink-200/70 bg-pink-100/30 text-pink-500 shadow-sm backdrop-blur-md">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full border border-pink-300/70 bg-white/40 text-sm shadow-inner"><span class="ml-0.5 inline-block h-0 w-0 border-y-[7px] border-l-[11px] border-y-transparent border-l-pink-500"></span></span>
           </div>
           <div class="min-w-0 flex-1">
             <p class="text-xs font-semibold uppercase tracking-[0.18em] text-pink-500">Project ${index + 1}</p>
@@ -476,8 +476,8 @@
               <div class="relative aspect-video overflow-hidden bg-stone-100">
                 ${media}
                 <div class="absolute inset-0 flex items-center justify-center bg-stone-950/25 transition group-hover:bg-stone-950/10">
-                  <div class="flex h-16 w-16 items-center justify-center rounded-full border border-white/70 bg-white/35 text-white shadow-lg backdrop-blur-md transition group-hover:scale-110">
-                    <span class="ml-1 text-2xl drop-shadow">▶</span>
+                  <div class="flex h-16 w-16 items-center justify-center rounded-full border border-pink-200/80 bg-pink-100/30 text-pink-500 shadow-lg backdrop-blur-md transition group-hover:scale-110">
+                    <span class="ml-1 text-2xl drop-shadow"><span class="ml-0.5 inline-block h-0 w-0 border-y-[7px] border-l-[11px] border-y-transparent border-l-pink-500"></span></span>
                   </div>
                 </div>
               </div>
